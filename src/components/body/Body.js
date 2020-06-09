@@ -7,6 +7,7 @@ import Cleaning from './Cleaning'
 import Charger from './Charger'
 import Home from './Home'
 import Illumination from './Illumination'
+import CarouselImage from './CarouselImage'
 export default class ProductApi extends Component {
   state = { products: {} };
   componentDidMount() {
@@ -34,39 +35,47 @@ export default class ProductApi extends Component {
   render() {
     return (
       <div>
-        <br />
-        <h2>Audio</h2>
-        <hr align="left" width="70%" />
-        <Audio products={this.state.products} />
-        <br />
-        <h2>Juguetes</h2>
-        <hr align="left" width="70%" />
-        <Toy products={this.state.products} />
-        <br />
-        <h2>Artilujios</h2>
-        <hr align="left" width="70%" />
-        <Gadget products={this.state.products} />
-        <br />
-        <h2>Mascotas</h2>
-        <hr align="left" width="70%" />
-        <Pet products={this.state.products} />
-        <br />
-        <h2>Limpieza</h2>
-        <hr align="left" width="70%" />
-        <Cleaning products={this.state.products} />
-        <br />
-        <h2>Cargadores</h2>
-        <hr align="left" width="70%" />
-        <Charger products={this.state.products} />
-        <br />
-        <h2>Hogar</h2>
-        <hr align="left" width="70%" />
-        <Home products={this.state.products} />
-        <br />
-        <h2>Iluminación</h2>
-        <hr align="left" width="70%" />
-        <Illumination products={this.state.products} />
+        <div>
+          <CarouselImage />
+        </div>
+
+        <div className="container">
+          <div className="mb-5">
+            <br />
+            <h2>Audio</h2>
+            <hr align="left" width="70%" />
+            <Audio products={this.state.products} />
+            <br />
+            <h2>Juguetes</h2>
+            <hr align="left" width="70%" />
+            <Toy products={this.state.products} />
+            <br />
+            <h2>Artilujios</h2>
+            <hr align="left" width="70%" />
+            <Gadget products={this.state.products} />
+            <br />
+            <h2>Mascotas</h2>
+            <hr align="left" width="70%" />
+            <Pet products={this.state.products} />
+            <br />
+            <h2>Limpieza</h2>
+            <hr align="left" width="70%" />
+            <Cleaning products={this.state.products} />
+            <br />
+            <h2>Cargadores</h2>
+            <hr align="left" width="70%" />
+            <Charger products={this.state.products} />
+            <br />
+            <h2>Hogar</h2>
+            <hr align="left" width="70%" />
+            <Home products={this.state.products} />
+            <br />
+            <h2>Iluminación</h2>
+            <hr align="left" width="70%" />
+            <Illumination products={this.state.products} />
+          </div>
+        </div>
       </div>
-    );
+    )
   }
 }
