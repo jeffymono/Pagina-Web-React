@@ -1,3 +1,6 @@
+body{
+    font-family: "SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+}
 .nav{
     padding: 25px;
     box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
@@ -16,10 +19,16 @@
     border-radius: 0px;
     border-bottom: 1px solid #D5D5D5;
 }
+/* Estilos en lupa quitar borde al sar click*/
+.btn:focus{
+    outline: none;
+    box-shadow: none;
+}
 .form-control, .input-buscador:focus {
     border-bottom: 1px solid #D5D5D5;
     box-shadow: none
 } 
 .navbar-nav, .nav-item, .nav-link{
     padding-left: 25px;
+    
 }
