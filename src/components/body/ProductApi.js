@@ -1,8 +1,7 @@
 import React, {Component} from 'react'
-import {Switch, Route} from 'react-router-dom'
 import ProductList from './ProductList'
 import CarouselImage from './CarouselImage'
-import ProductDetail from '../pages/ProductDetail';
+
 export default class ProductApi extends Component {
     //Crear estados para cada producto(categoria)
     //Y manda por props para el ProductList
