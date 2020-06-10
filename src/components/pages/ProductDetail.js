@@ -9,8 +9,7 @@ export default class ProductDetail extends Component {
         method: "GET",
         headers: {
           "x-rapidapi-host": "asos2.p.rapidapi.com",
-          "x-rapidapi-key":
-            "9bf4eeee26msh75557ea69b8ed4bp1111f6jsn9a7fc86ca27a",
+          "x-rapidapi-key": "58de42f635msheb7346205035345p157c8ajsn041a095b9368"
         },
       }
     )
