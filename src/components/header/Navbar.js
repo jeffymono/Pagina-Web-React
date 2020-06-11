@@ -1,12 +1,12 @@
 import React from 'react'
 import '../css/Navbar.css'
 import logo from'../img/logo.png'
+import {Link} from 'react-router-dom'
 
-class Navbar extends React.Component{
+class Links extends React.Component{
     render(){
-        
         return(
-            <nav className="navbar navbar-expand-lg navbar-light bg-light nav">
+            <nav className="navbar navbar-expand-lg fixed-top navbar-light bg-light nav">
                 <a className="navbar-brand" href="#"><img src={logo} className="App-logo" alt="logo" /></a>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
@@ -15,27 +15,31 @@ class Navbar extends React.Component{
                 <div className="collapse navbar-collapse links" id="navbarNav">
                     <ul className="navbar-nav">
                         <li className="nav-item active ">
-                            <a className="nav-link" href="#">Home <span className="sr-only">(current)</span></a>
+                            <Link className="nav-link" to="/home">Inicio <span className="sr-only">(current)</span></Link>
                         </li>
                         <li className="nav-item active">
-                            <a className="nav-link" href="#">Interesantes <span className="sr-only">(current)</span></a>
+                            <a className="nav-link" href="/#audio">Audio <span className="sr-only">(current)</span></a>
                         </li>
                         <li className="nav-item active">
-                            <a className="nav-link" href="#">Más vendidos <span className="sr-only">(current)</span></a>
+                            <a className="nav-link" href="#">Juguetes <span className="sr-only">(current)</span></a>
                         </li>
                         <li className="nav-item active">
-                            <a className="nav-link" href="#">Más baratos <span className="sr-only">(current)</span></a>
+                            <a className="nav-link" href="#">Gadgets <span className="sr-only">(current)</span></a>
                         </li>
                         <li className="nav-item dropdown">
                             <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Categorías
+                            Más categorías
                             </a>
                             <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a className="dropdown-item" href="#">Audio</a>
-                                <a className="dropdown-item" href="#">Cámaras</a>
-                                <div className="dropdown-divider"></div>
-                                <a className="dropdown-item" href="#">Cargadores</a>
+                                <a className="dropdown-item" href="#mascotas">Mascotas</a>
+                                <a className="dropdown-item" href="#limpieza">Limpieza</a>
+                                <a className="dropdown-item" href="#cargadores">Cargadores</a>
+                                <a className="dropdown-item" href="#hogar">Hogar</a>
+                                <a className="dropdown-item" href="#iluminación">Iluminación</a>
                             </div>
+                        </li>
+                        <li className="nav-item active">
+                        <Link className="nav-link" to="/home/contact">Contacto <span className="sr-only">(current)</span></Link>
                         </li>
                     </ul>
                     <form className="form-inline my-2 my-lg-0 buscador">
@@ -47,7 +51,7 @@ class Navbar extends React.Component{
                     </form>
                 </div>
             </nav>
-            )
+        )
     }
 }
-export default Navbar
+export default Links

@@ -3,7 +3,7 @@ import { Carousel } from "react-bootstrap";
 export default class CarouselImage extends Component {
   render() {
     return (
-      <Carousel>
+      <Carousel style={{ paddingTop: '6.6rem'}}>
         <Carousel.Item>
           <img
             className="d-block w-100"

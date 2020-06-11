@@ -35,7 +35,7 @@ export default class ProductDetail extends Component {
   render() {
     const {product} = this.state
     return (
-      <div>
+      <div style={{ paddingTop: '6.6rem'}}>
         <h1>{product.name}</h1>
         
       </div>
