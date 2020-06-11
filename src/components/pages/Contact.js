@@ -3,13 +3,13 @@ import React from 'react'
 class Contact extends React.Component {
     render(){
         return(
-            <div className="container" style={{ paddingTop: '9rem'}}>
+            <div className="container" style={{ paddingTop: '9rem', paddingBottom: '6%'}}>
                 <h1>Contáctanos</h1>
                 <hr />
                 <br />
                 <form>
                     <div className="form-row">
-                        <div class="col">
+                        <div className="col">
                             <input type="text" className="form-control" placeholder="Ingresa tus nombres" />
                         </div>
                         <div className="col">
