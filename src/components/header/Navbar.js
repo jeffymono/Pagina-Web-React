@@ -3,7 +3,7 @@ import '../css/Navbar.css'
 import logo from'../img/logo.png'
 import {Link} from 'react-router-dom'
 
-class Links extends React.Component{
+class Navbar extends React.Component{
     render(){
         return(
             <nav className="navbar navbar-expand-lg fixed-top navbar-light bg-light nav">
@@ -54,4 +54,4 @@ class Links extends React.Component{
         )
     }
 }
-export default Links
+export default Navbar
