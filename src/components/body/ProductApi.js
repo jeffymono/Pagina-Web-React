@@ -13,7 +13,7 @@ export default class ProductApi extends Component {
 	"method": "GET",
 	"headers": {
 		"x-rapidapi-host": "asos2.p.rapidapi.com",
-		"x-rapidapi-key": "58de42f635msheb7346205035345p157c8ajsn041a095b9368"
+		"x-rapidapi-key": "9e6c6faf1dmshd637a57c0c96969p17c95bjsnee124d6bae5b"
 	}
 })
       .then((response) => response.json())
