@@ -1,12 +1,14 @@
 import React, {Component} from 'react'
 import ProductList from './ProductList'
 import CarouselImage from './CarouselImage'
+import { Encabezado } from './Encabezado';
 
 export default class ProductApi extends Component {
     //Crear estados para cada producto(categoria)
     //Y manda por props para el ProductList
-  state = { products: {} }; 
+  state = { products: {},categoryName:"" }; 
   componentDidMount() {
+    this.mounted = true
     fetch("https://asos2.p.rapidapi.com/products/v2/list?country=US&currency=USD&sort=freshness&lang=en-US&sizeSchema=US&offset=0&categoryId=4209&limit=48&store=US", {
 	"method": "GET",
 	"headers": {
@@ -16,14 +18,19 @@ export default class ProductApi extends Component {
 })
       .then((response) => response.json())
       .then((data) => {
-        const { products } = data;
-        this.setState({ products });
+        if(this.mounted){
+        const { products,categoryName } = data;
+        this.setState({ products,categoryName });
+        }
       })
       .catch((err) => {
         console.log(err);
       });
   }
+  componentWillUnmount(){
+    this.mounted = false
 
+  }
   render() {
     return (
       <div>
@@ -33,50 +40,30 @@ export default class ProductApi extends Component {
 
         <div className="container">
           <div className="mb-5">
-          <br />
-            <h2>Interesantes</h2>
-            <hr align="left" width="70%" />
+            <br /><br />
+            
+            <Encabezado categoryName={this.state.categoryName}>Audio</Encabezado>
             <ProductList products={this.state.products} />
-            <br />
-            <h2>Más vendidos</h2>
-            <hr align="left" width="70%" />
+
+            <Encabezado>Juguetes</Encabezado>
             <ProductList products={this.state.products} />
-            <br />
-            <h2>Mas baratos</h2>
-            <hr align="left" width="70%" />
+            
+            <Encabezado>Artilujios</Encabezado>
             <ProductList products={this.state.products} />
-            <br />
-            <br />
-            <h2>Audio</h2>
-            <hr align="left" width="70%" />
+
+            <Encabezado>Mascotas</Encabezado>
             <ProductList products={this.state.products} />
-            <br />
-            <h2>Juguetes</h2>
-            <hr align="left" width="70%" />
+
+            <Encabezado>Limpieza</Encabezado>
             <ProductList products={this.state.products} />
-            <br />
-            <h2>Artilujios</h2>
-            <hr align="left" width="70%" />
+
+            <Encabezado>Cargadores</Encabezado>
             <ProductList products={this.state.products} />
-            <br />
-            <h2>Mascotas</h2>
-            <hr align="left" width="70%" />
+
+            <Encabezado>Hogar</Encabezado>
             <ProductList products={this.state.products} />
-            <br />
-            <h2>Limpieza</h2>
-            <hr align="left" width="70%" />
-            <ProductList products={this.state.products} />
-            <br />
-            <h2>Cargadores</h2>
-            <hr align="left" width="70%" />
-            <ProductList products={this.state.products} />
-            <br />
-            <h2>Hogar</h2>
-            <hr align="left" width="70%" />
-            <ProductList products={this.state.products} />
-            <br />
-            <h2>Iluminación</h2>
-            <hr align="left" width="70%" />
+
+            <Encabezado>Iluminación</Encabezado>
             <ProductList products={this.state.products} />
           </div>
         </div>

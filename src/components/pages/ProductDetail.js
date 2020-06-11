@@ -22,8 +22,14 @@ export default class ProductDetail extends Component {
       });
   }
   componentDidMount() {
+    this.mounted = true
+    if(this.mounted){
     const {id} = this.props.match.params
     this.fetchProduct(id)
+    }
+  }
+  componentWillUnmount(){
+    this.mounted=false
   }
 
   render() {
