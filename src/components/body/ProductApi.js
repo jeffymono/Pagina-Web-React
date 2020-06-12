@@ -44,25 +44,25 @@ export default class ProductApi extends Component {
             
             <Encabezado categoryName={this.state.categoryName}>Audio</Encabezado>
             <ProductList products={this.state.products} />
-
+            <br />
             <Encabezado>Juguetes</Encabezado>
             <ProductList products={this.state.products} />
-            
+            <br />
             <Encabezado>Artilujios</Encabezado>
             <ProductList products={this.state.products} />
-
+            <br />
             <Encabezado>Mascotas</Encabezado>
             <ProductList products={this.state.products} />
-
+            <br />
             <Encabezado>Limpieza</Encabezado>
             <ProductList products={this.state.products} />
-
+            <br />
             <Encabezado>Cargadores</Encabezado>
             <ProductList products={this.state.products} />
-
+            <br />
             <Encabezado>Hogar</Encabezado>
             <ProductList products={this.state.products} />
-
+            <br />
             <Encabezado>Iluminación</Encabezado>
             <ProductList products={this.state.products} />
           </div>
