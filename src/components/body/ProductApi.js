@@ -33,7 +33,7 @@ export default class ProductApi extends Component {
   }
   render() {
     return (
-      <div>
+      <div style={{ paddingBottom: '6%'}}>
         <div>
           <CarouselImage />
         </div>

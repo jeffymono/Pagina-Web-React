@@ -3,11 +3,11 @@ import '../css/Navbar.css'
 import logo from'../img/logo.png'
 import {Link} from 'react-router-dom'
 
-class Links extends React.Component{
+class Navbar extends React.Component{
     render(){
         return(
             <nav className="navbar navbar-expand-lg fixed-top navbar-light bg-light nav">
-                <a className="navbar-brand" href="#"><img src={logo} className="App-logo" alt="logo" /></a>
+                <Link className="nav-link" to="/home"><img src={logo} className="App-logo" alt="logo" /></Link>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
@@ -54,4 +54,4 @@ class Links extends React.Component{
         )
     }
 }
-export default Links
+export default Navbar

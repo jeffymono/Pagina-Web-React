@@ -20,8 +20,8 @@ class Principal extends React.Component{
                 </div>
                 <Body
                 />
-                {/*<Footer
-                />*/}
+                <Footer
+                />
 
             </BrowserRouter>
         )
