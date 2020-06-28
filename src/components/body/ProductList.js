@@ -3,20 +3,21 @@ import {Container,Row,Col  } from "react-bootstrap";
 import Product from './Product'
 export default class ProductList extends Component{
     render(){
+      console.log("-> render ProductList")
         const{products} = this.props
-        const mostrarProduct = Object.values(products)
-      .slice(0, 6)
-      .map((product) => (
-
-        <Col sm={2} width="270px" key={product.id}>
-            <Product 
-            imageUrl={product.imageUrl}
-            brandName ={product.brandName}
-            id={product.id}
+        const mostrarProduct = products.map(product => {
+          if(this.props.categoryId===product.categoria_id){
+            console.log("Hola",product)
+          return(
+          <Col sm={2} width="270px" key={product.id}>   
+            <Product
+              imageUrl={product.pro_imagen}
+              brandName={product.pro_marca}
+              id={product.id}
             />
-      </Col>
-      )
-        )
+          </Col>
+          )}
+        });
         return(
             <div>
             <Container fluid>

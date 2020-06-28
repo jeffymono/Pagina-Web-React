@@ -6,21 +6,22 @@ import { Encabezado } from './Encabezado';
 export default class ProductApi extends Component {
     //Crear estados para cada producto(categoria)
     //Y manda por props para el ProductList
-  state = { products: {},categoryName:"" }; 
+  state = { products: [],categoryName:"", }; 
   componentDidMount() {
     this.mounted = true
-    fetch("https://asos2.p.rapidapi.com/products/v2/list?country=US&currency=USD&sort=freshness&lang=en-US&sizeSchema=US&offset=0&categoryId=4209&limit=48&store=US", {
+
+    fetch(`https://api-xiaominario.herokuapp.com/products`, {
 	"method": "GET",
 	"headers": {
-		"x-rapidapi-host": "asos2.p.rapidapi.com",
-		"x-rapidapi-key": "9e6c6faf1dmshd637a57c0c96969p17c95bjsnee124d6bae5b"
+		"Content-Type": "application/json",
+		"authorization": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvbG9naW4iLCJpYXQiOjE1OTMwMjM2NDgsIm5iZiI6MTU5MzAyMzY0OCwianRpIjoiWDZYU3BLemhhUjd1aFYzSiIsInN1YiI6MSwicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.iYMa9nqazn_X4tM0cosUhGmtnGJMVrl7thJodXjhUl4"
 	}
 })
       .then((response) => response.json())
-      .then((data) => {
+      .then((products) => {
+        console.log("-> render ProductApi", products)
         if(this.mounted){
-        const { products,categoryName } = data;
-        this.setState({ products,categoryName });
+        this.setState({ products });
         }
       })
       .catch((err) => {
@@ -31,7 +32,9 @@ export default class ProductApi extends Component {
     this.mounted = false
 
   }
+
   render() {
+    console.log("->render ProductApi")
     return (
       <div style={{ paddingBottom: '6%'}}>
         <div>
@@ -41,10 +44,11 @@ export default class ProductApi extends Component {
         <div className="container">
           <div className="mb-5">
             <br /><br />
+            <Encabezado 
+            products={this.state.products}
+            />
             
-            <Encabezado categoryName={this.state.categoryName}>Audio</Encabezado>
-            <ProductList products={this.state.products} />
-            <br />
+{/*             <br />
             <Encabezado>Juguetes</Encabezado>
             <ProductList products={this.state.products} />
             <br />
@@ -64,7 +68,8 @@ export default class ProductApi extends Component {
             <ProductList products={this.state.products} />
             <br />
             <Encabezado>Iluminación</Encabezado>
-            <ProductList products={this.state.products} />
+            <ProductList products={this.state.products} /> */}
+            
           </div>
         </div>
       </div>
