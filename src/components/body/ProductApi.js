@@ -7,6 +7,7 @@ export default class ProductApi extends Component {
     //Crear estados para cada producto(categoria)
     //Y manda por props para el ProductList
   state = { products: [],categoryName:"", }; 
+  mounted=false
   componentDidMount() {
     this.mounted = true
 

@@ -5,18 +5,26 @@ export default class ProductList extends Component{
     render(){
       console.log("-> render ProductList")
         const{products} = this.props
-        const mostrarProduct = products.map(product => {
+        const productos = []
+        const mostrarProduct = products.map((product,indice) => {
+          
           if(this.props.categoryId===product.categoria_id){
-            console.log("Hola",product)
-          return(
-          <Col sm={2} width="270px" key={product.id}>   
-            <Product
-              imageUrl={product.pro_imagen}
-              brandName={product.pro_marca}
-              id={product.id}
-            />
-          </Col>
-          )}
+            
+            productos.push(product)
+            if(productos.length<7){
+              console.log("Hola",productos,indice)
+              return(
+                <Col sm={2} width="270px" key={product.id}>   
+                  <Product
+                    imageUrl={product.pro_imagen}
+                    brandName={product.pro_marca}
+                    idCategory={product.categoria_id}
+                    id={product.id}
+                  />
+                </Col>
+                )
+            }
+        }
         });
         return(
             <div>

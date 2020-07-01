@@ -41,7 +41,7 @@ export const Encabezado = ({ children,products, categoryId }) => {
       )
     }
 
-    console.log("-> render Encabezado"                                                                                                           )
+    console.log("-> render Encabezado"                                                                                                        )
   return (
       <div>
     {productArray()}
