@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
 import {Card} from "react-bootstrap";
+import '../css/body.css'
 export default class Product extends Component {
 
   render() {
@@ -8,8 +9,8 @@ export default class Product extends Component {
 console.log("-> render Product")
     return (
       <Link to={`/home/category/${idCategory}/productDetail/${id}`} style={{ textDecoration:"none"}}>
-      <Card style={{ width: "100%",margin:"2%" }}>
-      <Card.Img variant="top" src={imageUrl}/* {`data:image/jpeg;base64,${imageUrl}`} */ />
+      <Card style={{ width: "100%",margin:"2%",border: "none" }}>
+      <Card.Img variant="top" className="margenProduct" width="148" height="148" src={imageUrl}/* {`data:image/jpeg;base64,${imageUrl}`} */ />
       <Card.Body>
         <Card.Title>{brandName}</Card.Title>
       </Card.Body>

@@ -17,7 +17,7 @@ export default class ProductList extends Component{
                 <Col sm={2} width="270px" key={product.id}>   
                   <Product
                     imageUrl={product.pro_imagen}
-                    brandName={product.pro_marca}
+                    brandName={product.pro_modelo}
                     idCategory={product.categoria_id}
                     id={product.id}
                   />
