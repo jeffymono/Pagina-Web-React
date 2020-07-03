@@ -12,7 +12,7 @@ console.log("-> render Product")
       <Card style={{ width: "100%",margin:"2%",border: "none" }}>
       <Card.Img variant="top" className="margenProduct" width="148" height="148" src={imageUrl}/* {`data:image/jpeg;base64,${imageUrl}`} */ />
       <Card.Footer>
-        <small className="text-muted"><strong>{brandName}</strong></small>
+        <small className="text-muted cardFooterProduct"><strong>{brandName}</strong></small>
       </Card.Footer>
     </Card>
     </Link>

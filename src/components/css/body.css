@@ -9,3 +9,9 @@
 body{
     font-family: Roboto;
 }
+.cardFooterProduct{
+    padding-bottom: 2.25rem;
+    display: flex;
+    line-height: 1.2;
+    text-align: center;
+}
