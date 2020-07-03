@@ -13,5 +13,6 @@ body{
     padding-bottom: 2.25rem;
     display: flex;
     line-height: 1.2;
+    place-content: center;
     text-align: center;
 }
