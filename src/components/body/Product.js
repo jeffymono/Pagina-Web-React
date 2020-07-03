@@ -10,10 +10,10 @@ console.log("-> render Product")
     return (
       <Link to={`/home/category/${idCategory}/productDetail/${id}`} style={{ textDecoration:"none"}}>
       <Card style={{ width: "100%",margin:"2%",border: "none" }}>
-      <Card.Img variant="top" className="margenProduct" width="148" height="200" src={imageUrl}/* {`data:image/jpeg;base64,${imageUrl}`} */ />
-      <Card.Footer>
+      <Card.Img variant="top" className="margenProduct" width="148" height="158" src={imageUrl}/* {`data:image/jpeg;base64,${imageUrl}`} */ />
+      <div className="card-footer bg-transparent ">
         <small className="text-muted cardFooterProduct"><strong>{brandName}</strong></small>
-      </Card.Footer>
+      </div>
     </Card>
     </Link>
     )

@@ -5,6 +5,16 @@ import Product from "../body/Product";
 export default class ProductCategory extends Component {
   state = { products: [] };
   mounted = false;
+  
+  
+  componentDidMount() {
+    this.mounted = true;
+    if (this.mounted) {
+      const { id } = this.props.match.params;
+      this.fetchCategory(id);
+    }
+  }
+
   fetchCategory(id) {
     const requestApi = {
       method: "GET",
@@ -28,20 +38,14 @@ export default class ProductCategory extends Component {
       });
   }
 
-  componentDidMount() {
-    this.mounted = true;
-    if (this.mounted) {
-      const { id } = this.props.match.params;
-      this.fetchCategory(id);
-    }
-  }
+
   componentWillUnmount() {
     this.mounted = false;
   }
   render() {
     console.log(this.state.products);
     return (
-      <div style={{ marginTop: "8rem",marginBottom:"4.5rem" }} class="container-sm">
+      <div style={{ marginTop: "8rem",marginBottom:"4.5rem" }} className="container-sm">
         <Container fluid>
           <Row>
             {this.state.products.map((product) => {
