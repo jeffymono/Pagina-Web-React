@@ -18,7 +18,7 @@ class Contact extends React.Component {
                     </div>
                     <br />
                     <div className="form-group">
-                        <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingresa tu correo electrónico"/>
+                        <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingresa tú correo electrónico"/>
                     </div>
                     <div className="form-group">
                         <input type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Asunto"/>
