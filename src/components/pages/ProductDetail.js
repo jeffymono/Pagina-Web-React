@@ -36,8 +36,27 @@ export default class ProductDetail extends Component {
   render() {
     const {product} = this.state
     return (
-      <div style={{ paddingTop: '6.6rem'}}>
-        <h1>{product.pro_marca}</h1>
+      <div style={{ paddingTop: '6.6rem'}} className="container">
+      
+        <div className="card mb-3" style={{maxWidth: "100%", marginTop: "4%"}}>
+          <div className="row no-gutters">
+            <div className="col-md-4">
+              <img src={`${product.pro_imagen}`} className="card-img" alt={product.pro_modelo} />
+            </div>
+            <div className="col-md-8">
+              <div className="card-header">
+                {product.pro_marca}
+              </div>
+              <div className="card-body">
+                <h5 className="card-title"><b>{product.pro_modelo}</b></h5>
+                <p className="card-text">{product.pro_descripcion}</p>
+                
+                <h5 className="card-title"><b>Especifícaciones</b></h5>
+                <p className="card-text">{product.pro_dimesiones}</p>
+              </div>
+            </div>
+          </div>
+        </div>
         
       </div>
     );
