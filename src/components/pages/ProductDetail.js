@@ -42,6 +42,14 @@ export default class ProductDetail extends Component {
           <div className="row no-gutters">
             <div className="col-md-4">
               <img src={`${product.pro_imagen}`} className="card-img" alt={product.pro_modelo} />
+              <br/>
+              <br/>
+              <div className="col text-center">
+                <a href={`${product.pro_enlace}`} target="_blank">
+                  <button style={{background: "#ff7e00", border: "1px solid #b6610e"}}>Comprar</button>
+                </a>
+              </div>
+              <br/>
             </div>
             <div className="col-md-8">
               <div className="card-header">
@@ -57,6 +65,7 @@ export default class ProductDetail extends Component {
             </div>
           </div>
         </div>
+        <br/>
         <br/>
         <br/>
       </div>
