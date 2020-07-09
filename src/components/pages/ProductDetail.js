@@ -46,7 +46,7 @@ export default class ProductDetail extends Component {
               <br/>
               <div className="col text-center">
                 <a href={`${product.pro_enlace}`} target="_blank">
-                  <button style={{background: "#ff7e00", border: "1px solid #b6610e"}}>Comprar</button>
+                  <button className="btn btn-warning" style={{background: "#ff7e00", border: "1px solid #b6610e", width: "50%"}}>Comprar</button>
                 </a>
               </div>
               <br/>
