@@ -1,12 +1,14 @@
 import React from 'react'
 import '../css/Navbar.css'
-import logo from'../img/logo.png'
+import logo from'../img/logo2.png'
 import {Link} from 'react-router-dom'
+import { HashLink } from 'react-router-hash-link'
 
 class Navbar extends React.Component{
+    
     render(){
         return(
-            <nav className="navbar navbar-expand-lg fixed-top navbar-light bg-light nav">
+            <nav className="navbar navbar-expand-lg navbar-light bg-light nav">
                 <Link className="nav-link" to="/home"><img src={logo} className="App-logo" alt="logo" /></Link>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
@@ -18,24 +20,25 @@ class Navbar extends React.Component{
                             <Link className="nav-link" to="/home">Inicio <span className="sr-only">(current)</span></Link>
                         </li>
                         <li className="nav-item active">
-                            <a className="nav-link" href="/#audio">Audio <span className="sr-only">(current)</span></a>
+                            <HashLink className="nav-link" to="/home/#Audio">Audio<span className="sr-only">(current)</span></HashLink>
                         </li>
                         <li className="nav-item active">
-                            <a className="nav-link" href="#">Juguetes <span className="sr-only">(current)</span></a>
+                            <HashLink className="nav-link" to="/home/#Juguetes">Juguetes<span className="sr-only">(current)</span></HashLink>
                         </li>
                         <li className="nav-item active">
-                            <a className="nav-link" href="#">Gadgets <span className="sr-only">(current)</span></a>
+                            <HashLink className="nav-link" to="/home/#Gadgets">Gadgets<span className="sr-only">(current)</span></HashLink>
                         </li>
                         <li className="nav-item dropdown">
                             <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Más categorías
                             </a>
                             <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a className="dropdown-item" href="#mascotas">Mascotas</a>
-                                <a className="dropdown-item" href="#limpieza">Limpieza</a>
-                                <a className="dropdown-item" href="#cargadores">Cargadores</a>
-                                <a className="dropdown-item" href="#hogar">Hogar</a>
-                                <a className="dropdown-item" href="#iluminación">Iluminación</a>
+                                <HashLink className="dropdown-item" to="/home/#Cámaras">Cámaras<span className="sr-only">(current)</span></HashLink>
+                                <HashLink className="dropdown-item" to="/home/#Limpieza">Limpieza<span className="sr-only">(current)</span></HashLink>
+                                <HashLink className="dropdown-item" to="/home/#Cargadores">Cargadores<span className="sr-only">(current)</span></HashLink>
+                                <HashLink className="dropdown-item" to="/home/#Hogar">Hogar<span className="sr-only">(current)</span></HashLink>
+                                <HashLink className="dropdown-item" to="/home/#Iluminación">Iluminación<span className="sr-only">(current)</span></HashLink>
+                               
                             </div>
                         </li>
                         <li className="nav-item active">

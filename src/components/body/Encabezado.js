@@ -26,7 +26,7 @@ export const Encabezado = ({ products }) => {
       return(
         listCategories.map(category=>{
           return(
-            <div key={category.id}>
+            <div key={category.id} id={category.cat_nombre} >
              <div style={{display: "flex"}}> 
               <h2>{category.cat_nombre}</h2>
                &nbsp;&nbsp;
@@ -35,7 +35,7 @@ export const Encabezado = ({ products }) => {
              </div>
              <hr align="left" width="70%" />
              <ProductList products={products} categoryId={category.id} categoryName={category.cat_nombre}/>
-             </div>
+            </div>
           )
         })
       )

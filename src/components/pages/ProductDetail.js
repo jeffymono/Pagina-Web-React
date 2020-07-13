@@ -36,7 +36,7 @@ export default class ProductDetail extends Component {
   render() {
     const {product} = this.state
     return (
-      <div style={{ paddingTop: '6.6rem'}} className="container">
+      <div className="container">
       
         <div className="card mb-3" style={{maxWidth: "100%", marginTop: "4%"}}>
           <div className="row no-gutters">

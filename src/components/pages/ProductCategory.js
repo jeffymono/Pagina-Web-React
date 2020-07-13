@@ -45,7 +45,8 @@ export default class ProductCategory extends Component {
   render() {
     console.log(this.state.products);
     return (
-      <div style={{ marginTop: "8rem",marginBottom:"4.5rem" }} className="container-sm">
+      <div style={{ marginBottom:"4.5rem" }} className="container-sm">
+        <br /><br />
         <Container fluid>
           <Row>
             {this.state.products.map((product) => {

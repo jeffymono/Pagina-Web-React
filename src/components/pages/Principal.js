@@ -4,6 +4,7 @@ import Navbar from '../header/Navbar'
 import Body from '../body/Body'
 import Contact from './Contact'
 import Footer from '../footer/Footer'
+import ProductCategory from "../pages/ProductCategory";
 
 class Principal extends React.Component{
     render(){

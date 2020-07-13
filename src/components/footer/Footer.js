@@ -5,7 +5,7 @@ class Footer extends React.Component{
     render(){
         return(
             <nav className="navbar navbar-dark bg-dark footer">
-                <a className="navbar-brand" href="#">Xiaominario © 2020</a>
+                <a className="navbar-brand" style={{ paddingLeft: "4%"}} href="#">Xiaominari © 2020</a>
             </nav>
         )
     }

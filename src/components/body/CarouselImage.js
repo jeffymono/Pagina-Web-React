@@ -34,7 +34,7 @@ export default class CarouselImage extends Component {
   render() {
 
     return (
-      <Carousel style={{ paddingTop: '6.9rem'}}>
+      <Carousel>
         {this.CarouselItemImage()}
       </Carousel>
     );

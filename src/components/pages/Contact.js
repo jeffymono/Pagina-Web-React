@@ -3,7 +3,7 @@ import React from 'react'
 class Contact extends React.Component {
     render(){
         return(
-            <div className="container" style={{ paddingTop: '9rem', paddingBottom: '6%'}}>
+            <div className="container" style={{paddingBottom: '6%', marginTop: "2.5%"}}>
                 <h1>Contáctanos</h1>
                 <hr />
                 <br />
@@ -30,6 +30,9 @@ class Contact extends React.Component {
                         <button type="submit" className="btn btn-outline-secondary" >Enviar</button>
                     </div>
                 </form>
+                <br/>
+                <br/>
+                <br/>
             </div>
         )
     }
