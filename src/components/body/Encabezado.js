@@ -2,7 +2,7 @@ import React, {useState,useEffect} from "react"
 import '../css/body.css'
 import {Link} from 'react-router-dom'
 import ProductList from './ProductList'
-export const Encabezado = ({ children,products, categoryId }) => {
+export const Encabezado = ({ products }) => {
   const [listCategories, setCategories] =useState([])
 
   useEffect(() =>{
@@ -41,7 +41,6 @@ export const Encabezado = ({ children,products, categoryId }) => {
       )
     }
 
-    console.log("-> render Encabezado"                                                                                                        )
   return (
       <div>
     {productArray()}

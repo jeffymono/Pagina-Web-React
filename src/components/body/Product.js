@@ -6,7 +6,6 @@ export default class Product extends Component {
 
   render() {
     const {imageUrl,brandName,id,idCategory} = this.props
-console.log("-> render Product")
     return (
       <Link to={`/home/category/${idCategory}/productDetail/${id}`} style={{ textDecoration:"none"}}>
       <Card style={{ width: "100%",margin:"2%",border: "none" }}>

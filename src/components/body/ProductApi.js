@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import ProductList from './ProductList'
 import CarouselImage from './CarouselImage'
 import { Encabezado } from './Encabezado';
 
@@ -20,7 +19,6 @@ export default class ProductApi extends Component {
 })
       .then((response) => response.json())
       .then((products) => {
-        console.log("-> render ProductApi", products)
         if(this.mounted){
         this.setState({ products });
         }
@@ -35,7 +33,6 @@ export default class ProductApi extends Component {
   }
 
   render() {
-    console.log("->render ProductApi")
     return (
       <div style={{ paddingBottom: '6%'}}>
         <div>
@@ -48,29 +45,6 @@ export default class ProductApi extends Component {
             <Encabezado 
             products={this.state.products}
             />
-            
-{/*             <br />
-            <Encabezado>Juguetes</Encabezado>
-            <ProductList products={this.state.products} />
-            <br />
-            <Encabezado>Artilujios</Encabezado>
-            <ProductList products={this.state.products} />
-            <br />
-            <Encabezado>Mascotas</Encabezado>
-            <ProductList products={this.state.products} />
-            <br />
-            <Encabezado>Limpieza</Encabezado>
-            <ProductList products={this.state.products} />
-            <br />
-            <Encabezado>Cargadores</Encabezado>
-            <ProductList products={this.state.products} />
-            <br />
-            <Encabezado>Hogar</Encabezado>
-            <ProductList products={this.state.products} />
-            <br />
-            <Encabezado>Iluminación</Encabezado>
-            <ProductList products={this.state.products} /> */}
-            
           </div>
         </div>
       </div>
