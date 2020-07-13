@@ -17,3 +17,6 @@ body{
     place-content: center;
     text-align: center;
 }
+.cardImgProduct{
+    object-fit: contain ;
+}
