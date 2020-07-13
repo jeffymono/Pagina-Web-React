@@ -1,44 +1,41 @@
 import React, { Component } from "react";
+import '../css/carousel.css'
 import { Carousel } from "react-bootstrap";
+
+const IMAGES_BANNER={  
+  imageUno: require('../img/banner1.jpg'),
+  imagenDos: require('../img/banner2.jpg'),
+  imagenTres: require('../img/banner3.jpg')
+}
+
 export default class CarouselImage extends Component {
+
+
+  CarouselItemImage(){
+      return(
+        Object.keys(IMAGES_BANNER).map((image,indice)=>{
+        return(
+          <Carousel.Item key={indice}>
+             {/* Width=1300 y height=433  */}
+          <img 
+            className="d-block w-100"
+            src= {IMAGES_BANNER[image]}
+            alt={image}
+          />
+         {/*  <Carousel.Caption>
+            <h3>First slide label</h3>
+      <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          </Carousel.Caption> */}
+        </Carousel.Item>
+        )
+      })
+      )
+  }
   render() {
+
     return (
-      <Carousel style={{ paddingTop: '6.6rem'}}>
-        <Carousel.Item>
-          <img
-            className="d-block w-100"
-            src="https://previews.123rf.com/images/ylivdesign/ylivdesign1709/ylivdesign170910338/86856402-soccer-awards-banner-horizontal-concept-ilustraci%C3%B3n-plana-de-f%C3%BAtbol-premios-banner-vector-horizontal-concep.jpg"
-            alt="First slide"
-          />
-          <Carousel.Caption>
-            {/* <h3>First slide label</h3>
-      <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p> */}
-          </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item>
-          <img
-            className="d-block w-100"
-            src="https://previews.123rf.com/images/ylivdesign/ylivdesign1709/ylivdesign170910338/86856402-soccer-awards-banner-horizontal-concept-ilustraci%C3%B3n-plana-de-f%C3%BAtbol-premios-banner-vector-horizontal-concep.jpg"
-            alt="Third slide"
-          />
-
-          <Carousel.Caption>
-            {/*  <h3>Second slide label</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> */}
-          </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item>
-          <img
-            className="d-block w-100"
-            src="https://previews.123rf.com/images/ylivdesign/ylivdesign1709/ylivdesign170910338/86856402-soccer-awards-banner-horizontal-concept-ilustraci%C3%B3n-plana-de-f%C3%BAtbol-premios-banner-vector-horizontal-concep.jpg"
-            alt="Third slide"
-          />
-
-          <Carousel.Caption>
-            {/* <h3>Third slide label</h3>
-      <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p> */}
-          </Carousel.Caption>
-        </Carousel.Item>
+      <Carousel style={{ paddingTop: '6.9rem'}}>
+        {this.CarouselItemImage()}
       </Carousel>
     );
   }
