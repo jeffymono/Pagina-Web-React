@@ -1,55 +1,19 @@
-import React, { Component } from "react";
+import React, { useContext } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Product from "../body/Product";
+import StaticContext from "../context/StaticContext";
 
-export default class ProductCategory extends Component {
-  state = { products: [] };
-  mounted = false;
-  
-  
-  componentDidMount() {
-    this.mounted = true;
-    if (this.mounted) {
-      const { id } = this.props.match.params;
-      this.fetchCategory(id);
-    }
-  }
-
-  fetchCategory(id) {
-    const requestApi = {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization:
-          "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvbG9naW4iLCJpYXQiOjE1OTMwMTQ4NTIsIm5iZiI6MTU5MzAxNDg1MiwianRpIjoicGdidXpZcXF2c3BOMnRqTCIsInN1YiI6MSwicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.l9uCd28YRw2uWrNDxyOatmB-Rb6tJ5nGYlboDHdrQRc",
-      },
-    };
-    fetch(
-      `https://api-xiaominario.herokuapp.com/categories/${id}/products`,
-      requestApi
-    )
-      .then((response) => response.json())
-      .then((result) => {
-        console.log(result);
-        this.setState({ products: result });
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }
-
-
-  componentWillUnmount() {
-    this.mounted = false;
-  }
-  render() {
-    console.log(this.state.products);
-    return (
-      <div style={{ marginBottom:"4.5rem" }} className="container-sm">
-        <br /><br />
-        <Container fluid>
-          <Row>
-            {this.state.products.map((product) => {
+export default function ProductCategory({ match }) {
+  const context = useContext(StaticContext);
+  const { params } = match;
+  const productsArray = context.products.read().filter(productsCategory => productsCategory.categoria_id === parseInt(params.id) )
+  return (
+    <div style={{ marginBottom: "4.5rem" }} className="container-sm">
+      <br />
+      <br />
+      <Container fluid>
+        <Row>
+          {productsArray.map((product) => {
               return (
                 <Col sm={2} width="270px" key={product.id}>
                   <Product
@@ -60,10 +24,9 @@ export default class ProductCategory extends Component {
                   />
                 </Col>
               );
-            })}
-          </Row>
-        </Container>
-      </div>
-    );
-  }
+          })}
+        </Row>
+      </Container>
+    </div>
+  );
 }
