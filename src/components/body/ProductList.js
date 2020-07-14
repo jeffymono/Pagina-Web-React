@@ -1,11 +1,13 @@
 import React, {Component} from 'react'
 import {Container,Row,Col  } from "react-bootstrap";
 import Product from './Product'
+import {getApis} from './getApis'
+const listCategories = getApis();
 export default class ProductList extends Component{
     render(){
-        const{products} = this.props
         const productos = []
-        const mostrarProduct = products.map((product) => {
+
+        const mostrarProduct = listCategories.products.read().map((product) => {
           
           if(this.props.categoryId===product.categoria_id){
             

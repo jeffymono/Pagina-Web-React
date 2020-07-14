@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {Switch, Route} from 'react-router-dom'
 import ProductDetail from '../pages/ProductDetail';
-import ProductApi from './ProductApi';
+import ElementBody from './ElementBody';
 import ProductCategory from "../pages/ProductCategory";
 export default class Body extends Component {
 
@@ -9,7 +9,7 @@ export default class Body extends Component {
     return (
       <div>
         <Switch>
-          <Route exact path="/home" component={ProductApi}/>
+          <Route exact path="/home" component={ElementBody}/>
           <Route path="/home/category/:idCategory/productDetail/:id" component={ProductDetail}/>
           <Route path="/home/ProductCategory/:id" component={ProductCategory}/>
         </Switch>

@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import '../css/carousel.css'
 import { Carousel } from "react-bootstrap";
 
 const IMAGES_BANNER={  
