@@ -1,5 +1,5 @@
 import React, { Component, Suspense } from "react";
-import {Spinner} from 'react-bootstrap'
+import  Spinner  from "./Spinner";
 import CarouselImage from './CarouselImage'
 const CategoryList = React.lazy(() => import('./CategoryList'));
 

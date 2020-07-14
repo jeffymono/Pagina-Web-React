@@ -5,6 +5,7 @@ import ElementBody from "./ElementBody";
 import ProductCategory from "../pages/ProductCategory";
 import StaticContext from "../context/StaticContext";
 import { getApis } from "./getApis";
+import  Spinner  from "./Spinner";
 const listCategories = getApis();
 export default class Body extends Component {
   render() {
@@ -13,12 +14,12 @@ export default class Body extends Component {
         <div>
           <Switch>
             <Route exact path="/home" component={ElementBody} />
-            <Suspense fallback={<p>HOLA</p>}>
+            <Suspense fallback={<Spinner/>}>
               <Route
                 path="/home/category/:idCategory/productDetail/:id"
                 component={ProductDetail}
               />
-              <Suspense fallback={<p>GGG</p>}>
+              <Suspense fallback={<Spinner/>}>
                 <Route
                   path="/home/ProductCategory/:id"
                   component={ProductCategory}
