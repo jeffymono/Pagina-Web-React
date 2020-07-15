@@ -14,12 +14,12 @@ export default class Body extends Component {
         <div>
           <Switch>
             <Route exact path="/home" component={ElementBody} />
-            <Suspense fallback={<Spinner/>}>
+            <Suspense fallback={<h2>Loading..</h2>}>
               <Route
                 path="/home/category/:idCategory/productDetail/:id"
                 component={ProductDetail}
               />
-              <Suspense fallback={<Spinner/>}>
+              <Suspense fallback={<h2>Loading..</h2>}>
                 <Route
                   path="/home/ProductCategory/:id"
                   component={ProductCategory}
