@@ -1,150 +1,54 @@
 import React from "react";
 import Skeleton from "@material-ui/lab/Skeleton";
-import { Container, Row, Col, Card, Button } from "react-bootstrap";
+import { Container, Row, Col, Card } from "react-bootstrap";
 export default function Variants() {
-  let placeholderSix = [1, 2, 3, 4, 5, 6, 7, 8];
-
+  let rowEightCategories = [1, 2, 3, 4, 5, 6, 7, 8];
+  let colSixProducts = [1, 2, 3, 4, 5, 6];
   return (
     <div>
-      <br />
-
-      {placeholderSix.map((placeHolder, indice) => {
+      {rowEightCategories.map((c,indice) => {
         return (
-          <div>
+          <div key={indice}>
             <div style={{ display: "flex" }}>
-              <div style={{ display: "flex" }}>
                 <Skeleton
                   variant="rect"
-                  style={{ marginRight: "4%" }}
-                  width={90}
-                  height={35}
+                  width={84}
+                  height={37}
+                  style={{borderRadius:".25rem"}}
                 />
-                <Skeleton variant="rect" width={60} height={35} />
-              </div>
+                &nbsp;&nbsp;
+                <Skeleton variant="rect" width={84} height={35} style={{borderRadius:".25rem"}}/>
+              
             </div>
             <hr align="left" width="70%" />
             <Container fluid>
               <Row>
-                <Col sm={2} width="270px">
-                  <Card style={{ width: "100%", margin: "2%", border: "none" }}>
-                    <div
-                      variant="top"
-                      className="cardImgProduct"
-                      width="148"
-                      height="158"
-                      src={""} /* {`data:image/jpeg;base64,${imageUrl}`} */
-                    >
-                      <div style={{ marginRight: "3%" }}>
-                        <Skeleton variant="rect" height={158} />
-                        <div className="card-footer bg-transparent ">
-                          <Skeleton style={{ width: "100%" }} height={13} />
-                          <Skeleton style={{ width: "100%" }} height={13} />
-                          <Skeleton style={{ width: "100%" }} height={13} />
+                {colSixProducts.map((p,indice) => {
+                  return (
+                    <Col sm={2} width="270px" key={indice}>
+                      <Card
+                        style={{ width: "100%", margin: "2%", border: "none" }}
+                      >
+                        <div
+                          variant="top"
+                          className="cardImgProduct"
+                          width="148"
+                          height="158"
+                          src={""} /* {`data:image/jpeg;base64,${imageUrl}`} */
+                        >
+                          <div style={{ marginRight: "3%" }}>
+                            <Skeleton variant="rect" height={158} style={{borderRadius:"3px"}}/>
+                            <div className="card-footer bg-transparent " style={{borderRadius:".25rem", border:"none"}}>
+                              <Skeleton style={{ width: "100%", }} height={13} />
+                              <Skeleton style={{ width: "100%" }} height={13} />
+                              <Skeleton style={{ width: "100%" }} height={13} />
+                            </div>
+                          </div>
                         </div>
-                      </div>
-                    </div>
-                  </Card>
-                </Col>
-                <Col sm={2} width="270px">
-                  <Card style={{ width: "100%", margin: "2%", border: "none" }}>
-                    <div
-                      variant="top"
-                      className="cardImgProduct"
-                      width="148"
-                      height="158"
-                      src={""} /* {`data:image/jpeg;base64,${imageUrl}`} */
-                    >
-                      <div style={{ marginRight: "3%" }}>
-                        <Skeleton variant="rect" height={158} />
-                        <div className="card-footer bg-transparent ">
-                          <Skeleton style={{ width: "100%" }} height={13} />
-                          <Skeleton style={{ width: "100%" }} height={13} />
-                          <Skeleton style={{ width: "100%" }} height={13} />
-                        </div>
-                      </div>
-                    </div>
-                  </Card>
-                </Col>{" "}
-                <Col sm={2} width="270px">
-                  <Card style={{ width: "100%", margin: "2%", border: "none" }}>
-                    <div
-                      variant="top"
-                      className="cardImgProduct"
-                      width="148"
-                      height="158"
-                      src={""} /* {`data:image/jpeg;base64,${imageUrl}`} */
-                    >
-                      <div style={{ marginRight: "3%" }}>
-                        <Skeleton variant="rect" height={158} />
-                        <div className="card-footer bg-transparent ">
-                          <Skeleton style={{ width: "100%" }} height={13} />
-                          <Skeleton style={{ width: "100%" }} height={13} />
-                          <Skeleton style={{ width: "100%" }} height={13} />
-                        </div>
-                      </div>
-                    </div>
-                  </Card>
-                </Col>{" "}
-                <Col sm={2} width="270px">
-                  <Card style={{ width: "100%", margin: "2%", border: "none" }}>
-                    <div
-                      variant="top"
-                      className="cardImgProduct"
-                      width="148"
-                      height="158"
-                      src={""} /* {`data:image/jpeg;base64,${imageUrl}`} */
-                    >
-                      <div style={{ marginRight: "3%" }}>
-                        <Skeleton variant="rect" height={158} />
-                        <div className="card-footer bg-transparent ">
-                          <Skeleton style={{ width: "100%" }} height={13} />
-                          <Skeleton style={{ width: "100%" }} height={13} />
-                          <Skeleton style={{ width: "100%" }} height={13} />
-                        </div>
-                      </div>
-                    </div>
-                  </Card>
-                </Col>{" "}
-                <Col sm={2} width="270px">
-                  <Card style={{ width: "100%", margin: "2%", border: "none" }}>
-                    <div
-                      variant="top"
-                      className="cardImgProduct"
-                      width="148"
-                      height="158"
-                      src={""} 
-                    >
-                      <div style={{ marginRight: "3%" }}>
-                        <Skeleton variant="rect" height={158} />
-                        <div className="card-footer bg-transparent ">
-                          <Skeleton style={{ width: "100%" }} height={13} />
-                          <Skeleton style={{ width: "100%" }} height={13} />
-                          <Skeleton style={{ width: "100%" }} height={13} />
-                        </div>
-                      </div>
-                    </div>
-                  </Card>
-                </Col>{" "}
-                <Col sm={2} width="270px">
-                  <Card style={{ width: "100%", margin: "2%", border: "none" }}>
-                    <div
-                      variant="top"
-                      className="cardImgProduct"
-                      width="148"
-                      height="158"
-                      src={""} 
-                    >
-                      <div style={{ marginRight: "3%" }}>
-                        <Skeleton variant="rect" height={158} />
-                        <div className="card-footer bg-transparent ">
-                          <Skeleton style={{ width: "100%" }} height={13} />
-                          <Skeleton style={{ width: "100%" }} height={13} />
-                          <Skeleton style={{ width: "100%" }} height={13} />
-                        </div>
-                      </div>
-                    </div>
-                  </Card>
-                </Col>
+                      </Card>
+                    </Col>
+                  );
+                })}
               </Row>
             </Container>
           </div>

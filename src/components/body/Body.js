@@ -5,7 +5,6 @@ import ElementBody from "./ElementBody";
 import ProductCategory from "../pages/ProductCategory";
 import StaticContext from "../context/StaticContext";
 import { getApis } from "./getApis";
-import  Spinner  from "./Spinner";
 const listCategories = getApis();
 export default class Body extends Component {
   render() {
