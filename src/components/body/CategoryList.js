@@ -9,11 +9,7 @@ const CategoryList = () => {
     return (
       <div key={category.id} id={category.cat_nombre}>
         <Category id={category.id} nombre={category.cat_nombre} />
-        <ProductList
-          products={listCategories.products}
-          categoryId={category.id}
-          categoryName={category.cat_nombre}
-        />
+        
       </div>
     );
   });

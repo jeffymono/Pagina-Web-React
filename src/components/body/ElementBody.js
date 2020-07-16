@@ -1,6 +1,6 @@
 import React, { Component, Suspense } from "react";
-import  Spinner  from "./Spinner";
 import CarouselImage from './CarouselImage'
+import SpinnerCategory from './SpinnerCategory'
 const CategoryList = React.lazy(() => import('./CategoryList'));
 
 export default class ElementBody extends Component {
@@ -18,11 +18,7 @@ export default class ElementBody extends Component {
             <br />
             <br />
             <Suspense
-              fallback={
-                <Spinner animation="border" role="status">
-                  <span className="sr-only">Loading...</span>
-                </Spinner>
-              }
+              fallback={<SpinnerCategory/>}
             >
               <CategoryList />
             </Suspense>
