@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import { Carousel } from "react-bootstrap";
 
 const IMAGES_BANNER={  
-  imageUno: require('../img/banner1.jpg'),
-  imagenDos: require('../img/banner2.jpg'),
-  imagenTres: require('../img/banner3.jpg')
+  imageUno: require('../img/banner1.webp'),
+  imagenDos: require('../img/banner2.webp'),
+  imagenTres: require('../img/banner3.webp')
 }
 
 export default class CarouselImage extends Component {
